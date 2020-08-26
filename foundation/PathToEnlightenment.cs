@@ -15,6 +15,7 @@ namespace foundation
                     "foundation.InfoStrings",
                     "foundation.InfoInheritance",
                     "foundation.InfoMethods",
+                    "foundation.InfoControlStatements",
                 };
             }
         }

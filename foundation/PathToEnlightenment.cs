@@ -13,6 +13,7 @@ namespace foundation
                     "foundation.InfoArrays",
                     "foundation.InfoArrayAssignment",
                     "foundation.InfoStrings",
+                    "foundation.InfoInheritance",
                 };
             }
         }

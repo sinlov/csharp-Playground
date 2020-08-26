@@ -16,6 +16,7 @@ namespace foundation
                     "foundation.InfoInheritance",
                     "foundation.InfoMethods",
                     "foundation.InfoControlStatements",
+                    "foundation.InfoGenericContainers",
                 };
             }
         }

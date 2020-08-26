@@ -14,6 +14,7 @@ namespace foundation
                     "foundation.InfoArrayAssignment",
                     "foundation.InfoStrings",
                     "foundation.InfoInheritance",
+                    "foundation.InfoMethods",
                 };
             }
         }

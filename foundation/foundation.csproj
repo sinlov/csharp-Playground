@@ -58,6 +58,7 @@
         <Compile Include="InfoDelegates.cs" />
         <Compile Include="InfoGenericContainers.cs" />
         <Compile Include="InfoInheritance.cs" />
+        <Compile Include="InfoLambdas.cs" />
         <Compile Include="InfoMethods.cs" />
         <Compile Include="InfoNil.cs" />
         <Compile Include="InfoStrings.cs" />

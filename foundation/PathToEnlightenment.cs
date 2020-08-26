@@ -17,6 +17,7 @@ namespace foundation
                     "foundation.InfoMethods",
                     "foundation.InfoControlStatements",
                     "foundation.InfoGenericContainers",
+                    "foundation.InfoDelegates",
                 };
             }
         }

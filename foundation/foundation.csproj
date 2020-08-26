@@ -55,6 +55,7 @@
         <Compile Include="InfoArrays.cs" />
         <Compile Include="InfoAssertTests.cs" />
         <Compile Include="InfoControlStatements.cs" />
+        <Compile Include="InfoDelegates.cs" />
         <Compile Include="InfoGenericContainers.cs" />
         <Compile Include="InfoInheritance.cs" />
         <Compile Include="InfoMethods.cs" />

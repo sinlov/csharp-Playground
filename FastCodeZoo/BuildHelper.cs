@@ -20,10 +20,10 @@ namespace FastCodeZoo
             BuildConfigInfo buildConfigInfo = new BuildConfigInfo();
             string runPath = AppDomain.CurrentDomain.BaseDirectory;
             string assemblyPath = Path.Combine(runPath, $"{namespaceZoo}.dll");
-            var assembly = Assembly.LoadFile(assemblyPath);
+            var assembly = Assembly.UnsafeLoadFrom(assemblyPath);
             Type type = assembly.GetType($"{namespaceZoo}.BuildConfig");
             var fieldInfos = type.GetFields(
-                
+                BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy  
             );
             foreach (var fieldInfo in fieldInfos)
             {

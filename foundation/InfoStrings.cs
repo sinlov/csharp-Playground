@@ -149,49 +149,50 @@ broken line";
 		{
 			//You can modify the value inserted into the result
 			var str = string.Format("{0,3:}", "x");
-			Assert.Equal("x  ", str);
+			Assert.Equal("  x", str);
 		}
 
 		[Koan(15)]
 		public void StringsCanBePaddedToTheRight()
 		{
 			var str = string.Format("{0,-3:}", "x");
-			Assert.Equal("  x", str);
+			Assert.Equal("x  ", str);
 		}
 
 		[Koan(16)]
 		public void SeperatorsCanBeAdded()
 		{
 			var str = string.Format("{0:n}", 123456);
-			Assert.Equal(FILL_ME_IN, str);
+			Assert.Equal("123,456.00", str);
 		}
 
 		[Koan(17)]
 		public void CurrencyDesignatorsCanBeAdded()
 		{
 			var str = string.Format("{0:n}", 123456);
-			Assert.Equal(FILL_ME_IN, str);
+			Assert.Equal("123,456.00", str);
 		}
 
 		[Koan(18)]
 		public void NumberOfDisplayedDecimalsCanBeControled()
 		{
 			var str = string.Format("{0:.##}", 12.3456);
-			Assert.Equal(FILL_ME_IN, str);
+			// warning ## will rounding
+			Assert.Equal("12.35", str);
 		}
 
 		[Koan(19)]
 		public void MinimumNumberOfDisplayedDecimalsCanBeControled()
 		{
 			var str = string.Format("{0:.00}", 12.3);
-			Assert.Equal(FILL_ME_IN, str);
+			Assert.Equal("12.30", str);
 		}
 
 		[Koan(20)]
 		public void BuiltInDateFormaters()
 		{
 			var str = string.Format("{0:t}", DateTime.Parse("12/16/2011 2:35:02 PM"));
-			Assert.Equal(FILL_ME_IN, str);
+			Assert.Equal("14:35", str);
 		}
 
 		[Koan(21)]

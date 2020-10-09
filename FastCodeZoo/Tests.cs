@@ -5,30 +5,27 @@ using Xunit.Abstractions;
 
 namespace FastCodeZoo
 {
-    public class Tests
+    public class Tests : BaseTests
     {
-        private readonly ITestOutputHelper _testOutputHelper;
-
-        public Tests(ITestOutputHelper testOutputHelper)
-        {
-            _testOutputHelper = testOutputHelper;
-        }
-
         [Fact]
         public void Test_Build_Helper()
         {
             string namespaceZoo = "FastCodeZoo";
             string runPath = AppDomain.CurrentDomain.BaseDirectory;
             string assemblyPath = Path.Combine(runPath, $"{namespaceZoo}.dll");
-            _testOutputHelper.WriteLine($"assemblyPath: {assemblyPath}");
+            TLog($"assemblyPath: {assemblyPath}");
 
             var fetchBuildConfig = BuildHelper.FetchBuildConfig(namespaceZoo);
-            _testOutputHelper.WriteLine($"fetchBuildConfig.Name {fetchBuildConfig.Name}");
-            _testOutputHelper.WriteLine($"fetchBuildConfig.NameSpace {fetchBuildConfig.NameSpace}");
-            _testOutputHelper.WriteLine($"fetchBuildConfig.VersionName {fetchBuildConfig.VersionName}");
-            _testOutputHelper.WriteLine($"fetchBuildConfig.VersionCode {fetchBuildConfig.VersionCode}");
-            _testOutputHelper.WriteLine($"fetchBuildConfig.BuildTime {fetchBuildConfig.BuildTime}");
+            TLog($"fetchBuildConfig.Name {fetchBuildConfig.Name}");
+            TLog($"fetchBuildConfig.NameSpace {fetchBuildConfig.NameSpace}");
+            TLog($"fetchBuildConfig.VersionName {fetchBuildConfig.VersionName}");
+            TLog($"fetchBuildConfig.VersionCode {fetchBuildConfig.VersionCode}");
+            TLog($"fetchBuildConfig.BuildTime {fetchBuildConfig.BuildTime}");
             Assert.True(true);
+        }
+
+        public Tests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
+        {
         }
     }
 }

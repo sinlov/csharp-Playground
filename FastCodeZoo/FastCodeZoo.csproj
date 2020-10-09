@@ -51,8 +51,11 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="BaseTests.cs" />
         <Compile Include="BuildConfig.cs" />
         <Compile Include="BuildHelper.cs" />
+        <Compile Include="CodeStackTrace.cs" />
+        <Compile Include="CodeStackTraceTest.cs" />
         <Compile Include="Tests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

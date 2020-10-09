@@ -13,9 +13,9 @@ namespace FastCodeZoo
         }
 
         [Fact]
-        public void Test_GetCurSourceFileName()
+        public void Test_GetCurSourceFileAbsPath()
         {
-            TLog($"CodeStackTrace.GetCurSourceFileName {CodeStackTrace.GetCurSourceFileName}");
+            TLog($"CodeStackTrace.GetCurSourceFileAbsPath {CodeStackTrace.GetCurSourceFileAbsPath}");
         }
 
         public CodeStackTraceTest(ITestOutputHelper testOutputHelper) : base(testOutputHelper)

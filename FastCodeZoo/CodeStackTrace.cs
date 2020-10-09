@@ -14,7 +14,7 @@ namespace FastCodeZoo
             }
         }
 
-        public static string GetCurSourceFileName
+        public static string GetCurSourceFileAbsPath
         {
             get
             {

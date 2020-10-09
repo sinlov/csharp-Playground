@@ -22,5 +22,10 @@ namespace FastCodeZoo
                 return st.GetFrame(0).GetFileName();
             }
         }
+
+        public static string GetCurSourceFileAbsDir
+        {
+            get { return Path.GetDirectoryName(GetCurSourceFileAbsPath); }
+        }
     }
 }

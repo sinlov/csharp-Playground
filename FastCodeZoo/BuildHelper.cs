@@ -10,7 +10,7 @@ namespace FastCodeZoo
         public string NameSpace;
         public string VersionName;
         public int VersionCode;
-        public int BuildTime;
+        public long BuildTime;
     }
 
     public class BuildHelper
@@ -23,7 +23,7 @@ namespace FastCodeZoo
             var assembly = Assembly.UnsafeLoadFrom(assemblyPath);
             Type type = assembly.GetType($"{namespaceZoo}.BuildConfig");
             var fieldInfos = type.GetFields(
-                BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy  
+                // BindingFlags.Static | BindingFlags.Public | BindingFlags.FlattenHierarchy
             );
             foreach (var fieldInfo in fieldInfos)
             {
@@ -53,7 +53,7 @@ namespace FastCodeZoo
 
                 if (fieldInfo.Name == "BuildTime")
                 {
-                    var val = (int) fieldInfo.GetRawConstantValue();
+                    var val = (long) fieldInfo.GetRawConstantValue();
                     buildConfigInfo.BuildTime = val;
                 }
             }

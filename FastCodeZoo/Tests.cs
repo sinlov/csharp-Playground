@@ -5,7 +5,7 @@ using Xunit.Abstractions;
 
 namespace FastCodeZoo
 {
-    public class Tests : BaseTests
+    public class Tests : BaseTests.BaseTests
     {
         [Fact]
         public void Test_Build_Helper()

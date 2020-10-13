@@ -4,7 +4,7 @@ using Xunit.Abstractions;
 
 namespace FastCodeZoo
 {
-    public class CodeStackTraceTest : BaseTests
+    public class CodeStackTraceTest : BaseTests.BaseTests
     {
         [Fact]
         public void Test_GetProgramRunnerPath()
@@ -19,7 +19,7 @@ namespace FastCodeZoo
             TLog($"CodeStackTrace.GetCurSourceFileAbsPath {CodeStackTrace.GetCurSourceFileAbsPath}");
             Assert.NotEmpty(CodeStackTrace.GetCurSourceFileAbsPath);
         }
-        
+
         [Fact]
         public void Test_GetCurSourceFileAbsDir()
         {

@@ -51,13 +51,24 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="BaseTests.cs" />
+        <Compile Include="BaseTests\BaseTests.cs" />
+        <Compile Include="BaseTests\DisposableTests.cs" />
         <Compile Include="BuildConfig.cs" />
         <Compile Include="BuildHelper.cs" />
         <Compile Include="CodeStackTrace.cs" />
         <Compile Include="CodeStackTraceTest.cs" />
         <Compile Include="Tests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="XML.Tests\AppleEntitlementsUtilsTests.cs" />
+        <Compile Include="XML.Tests\XmlOperatorTests.cs" />
+        <Compile Include="XML\AppleEntitlementsUtils.cs" />
+        <Compile Include="XML\XMLOperator.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="XML.Tests\default.entitlements" />
+      <Content Include="XML.Tests\default.xml" />
+      <Content Include="XML.Tests\error.json" />
+      <Content Include="XML.Tests\sign-with-apple.entitlements" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

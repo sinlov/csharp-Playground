@@ -29,6 +29,11 @@ namespace FastCodeZoo.BaseTests
 
         /// <summary>
         /// Init Self info
+        ///
+        /// <code>
+        /// InitSelf(MethodBase.GetCurrentMethod());
+        /// </code>
+        /// 
         /// </summary>
         /// <param name="currentMethod">MethodBase.GetCurrentMethod()</param>
         protected void InitSelf(MethodBase currentMethod)
@@ -45,6 +50,15 @@ namespace FastCodeZoo.BaseTests
             }
         }
 
+        /// <summary>
+        /// must use as
+        ///
+        /// <code>
+        /// InitSelf(MethodBase.GetCurrentMethod());
+        /// </code>
+        /// 
+        /// </summary>
+        /// <param name="testOutputHelper"></param>
         public BaseTests(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;

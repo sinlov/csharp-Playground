@@ -57,6 +57,8 @@
         <Compile Include="BuildHelper.cs" />
         <Compile Include="CodeStackTrace.cs" />
         <Compile Include="CodeStackTraceTest.cs" />
+        <Compile Include="FilePlus.Tests\FilePlusTest.cs" />
+        <Compile Include="FilePlus\FilePlus.cs" />
         <Compile Include="Tests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="XML.Tests\AppleEntitlementsUtilsTests.cs" />
@@ -65,6 +67,12 @@
         <Compile Include="XML\XMLOperator.cs" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="FilePlus.Tests\.gitignore" />
+      <Content Include="FilePlus.Tests\copy-test-source\.gitignore" />
+      <Content Include="FilePlus.Tests\copy-test-source\innerdir-2\data.json" />
+      <Content Include="FilePlus.Tests\copy-test-source\innerdir_1\some.md" />
+      <Content Include="FilePlus.Tests\copy-test-source\innerdir_1\some.md.meta" />
+      <Content Include="FilePlus.Tests\copy-test-source\NewFile1.txt" />
       <Content Include="XML.Tests\default.entitlements" />
       <Content Include="XML.Tests\default.xml" />
       <Content Include="XML.Tests\error.json" />

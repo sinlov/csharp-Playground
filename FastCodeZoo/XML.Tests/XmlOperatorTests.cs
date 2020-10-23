@@ -51,6 +51,15 @@ namespace FastCodeZoo.XMK.Tests
         [Fact]
         public void Test_InjectElementWithTexts()
         {
+            DirectoryInfo dir = new DirectoryInfo(GetCurSourceFileAbsDir);
+            if (!dir.Exists)
+            {
+                TLog($"GetCurSourceFileAbsDir not exist at: {GetCurSourceFileAbsDir}");
+            }
+            else
+            {
+                TLog($"GetCurSourceFileAbsDir exist at: {GetCurSourceFileAbsDir}");
+            }
             Exception withAttributes =
                 XmlOperator.InjectElementWithTexts(_defaultXML, _rootXPath, _targetXPath, _injectElement,
                     _attributes);

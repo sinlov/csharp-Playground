@@ -34,7 +34,7 @@ namespace foundation
             var str = "Hello, \"World\"";
             Assert.Equal(14, str.Length);
         }
-        
+
         [Koan(4)]
         public void AnotherWayToCreateAStringWhichContainsDoubleQuotes()
         {
@@ -51,7 +51,7 @@ namespace foundation
             var strB = "Verbatim Strings can handle both ' and \" characters (when escaped)";
             Assert.Equal(true, strA.Equals(strB));
         }
-        
+
         [Koan(6)]
         public void VerbatimStringsCanHandleMultipleLinesToo()
         {
@@ -78,7 +78,7 @@ broken line";
             var vebatimString = "I\nam a\nbroken line";
             Assert.Equal(literalString, vebatimString);
         }
-        
+
         [Koan(8)]
         public void PlusWillConcatenateTwoStrings()
         {
@@ -129,145 +129,145 @@ broken line";
             //when dealing with lots of concatenation
         }
 
-		[Koan(12)]
-		public void YouDoNotNeedConcatenationToInsertVariablesInAString()
-		{
-			var world = "World";
-			var str = String.Format("Hello, {0}", world);
-			Assert.Equal("Hello, World", str);
-		}
+        [Koan(12)]
+        public void YouDoNotNeedConcatenationToInsertVariablesInAString()
+        {
+            var world = "World";
+            var str = String.Format("Hello, {0}", world);
+            Assert.Equal("Hello, World", str);
+        }
 
-		[Koan(13)]
-		public void AnyExpressionCanBeUsedInFormatString()
-		{
-			var str = String.Format("The square root of 9 is {0}", Math.Sqrt(9));
-			Assert.Equal("The square root of 9 is 3", str);
-		}
+        [Koan(13)]
+        public void AnyExpressionCanBeUsedInFormatString()
+        {
+            var str = String.Format("The square root of 9 is {0}", Math.Sqrt(9));
+            Assert.Equal("The square root of 9 is 3", str);
+        }
 
-		[Koan(14)]
-		public void StringsCanBePaddedToTheLeft()
-		{
-			//You can modify the value inserted into the result
-			var str = string.Format("{0,3:}", "x");
-			Assert.Equal("  x", str);
-		}
+        [Koan(14)]
+        public void StringsCanBePaddedToTheLeft()
+        {
+            //You can modify the value inserted into the result
+            var str = string.Format("{0,3:}", "x");
+            Assert.Equal("  x", str);
+        }
 
-		[Koan(15)]
-		public void StringsCanBePaddedToTheRight()
-		{
-			var str = string.Format("{0,-3:}", "x");
-			Assert.Equal("x  ", str);
-		}
+        [Koan(15)]
+        public void StringsCanBePaddedToTheRight()
+        {
+            var str = string.Format("{0,-3:}", "x");
+            Assert.Equal("x  ", str);
+        }
 
-		[Koan(16)]
-		public void SeperatorsCanBeAdded()
-		{
-			var str = string.Format("{0:n}", 123456);
-			Assert.Equal("123,456.00", str);
-		}
+        [Koan(16)]
+        public void SeperatorsCanBeAdded()
+        {
+            var str = string.Format("{0:n}", 123456);
+            Assert.Equal("123,456.00", str);
+        }
 
-		[Koan(17)]
-		public void CurrencyDesignatorsCanBeAdded()
-		{
-			var str = string.Format("{0:n}", 123456);
-			Assert.Equal("123,456.00", str);
-		}
+        [Koan(17)]
+        public void CurrencyDesignatorsCanBeAdded()
+        {
+            var str = string.Format("{0:n}", 123456);
+            Assert.Equal("123,456.00", str);
+        }
 
-		[Koan(18)]
-		public void NumberOfDisplayedDecimalsCanBeControled()
-		{
-			var str = string.Format("{0:.##}", 12.3456);
-			// warning ## will rounding
-			Assert.Equal("12.35", str);
-		}
+        [Koan(18)]
+        public void NumberOfDisplayedDecimalsCanBeControled()
+        {
+            var str = string.Format("{0:.##}", 12.3456);
+            // warning ## will rounding
+            Assert.Equal("12.35", str);
+        }
 
-		[Koan(19)]
-		public void MinimumNumberOfDisplayedDecimalsCanBeControled()
-		{
-			var str = string.Format("{0:.00}", 12.3);
-			Assert.Equal("12.30", str);
-		}
+        [Koan(19)]
+        public void MinimumNumberOfDisplayedDecimalsCanBeControled()
+        {
+            var str = string.Format("{0:.00}", 12.3);
+            Assert.Equal("12.30", str);
+        }
 
-		[Koan(20)]
-		public void BuiltInDateFormaters()
-		{
-			var str = string.Format("{0:t}", DateTime.Parse("12/16/2011 2:35:02 PM"));
-			Assert.Equal("14:35", str);
-		}
+        [Koan(20)]
+        public void BuiltInDateFormaters()
+        {
+            var str = string.Format("{0:t}", DateTime.Parse("12/16/2011 2:35:02 PM"));
+            Assert.Equal("14:35", str);
+        }
 
-		[Koan(21)]
-		public void CustomeDateFormaters()
-		{
-			var str = string.Format("{0:t m}", DateTime.Parse("12/16/2011 2:35:02 PM"));
-			Assert.Equal(FILL_ME_IN, str);
-		}
-		//These are just a few of the formatters available. Dig some and you may find what you need.
+        [Koan(21)]
+        public void CustomeDateFormaters()
+        {
+            var str = string.Format("{0:t m}", DateTime.Parse("12/16/2011 2:35:02 PM"));
+            Assert.Equal("下 35", str);
+        }
+        //These are just a few of the formatters available. Dig some and you may find what you need.
 
         [Koan(22)]
         public void ABetterWayToConcatenateLotsOfStrings()
         {
             //Concatenating lots of strings is a Bad Idea(tm). If you need to do that, then consider StringBuilder.
             var strBuilder = new System.Text.StringBuilder();
-			strBuilder.Append("The ");
-			strBuilder.Append("quick ");
-			strBuilder.Append("brown ");
-			strBuilder.Append("fox ");
-			strBuilder.Append("jumped ");
-			strBuilder.Append("over ");
-			strBuilder.Append("the ");
-			strBuilder.Append("lazy ");
-			strBuilder.Append("dog.");
+            strBuilder.Append("The ");
+            strBuilder.Append("quick ");
+            strBuilder.Append("brown ");
+            strBuilder.Append("fox ");
+            strBuilder.Append("jumped ");
+            strBuilder.Append("over ");
+            strBuilder.Append("the ");
+            strBuilder.Append("lazy ");
+            strBuilder.Append("dog.");
             var str = strBuilder.ToString();
-            Assert.Equal(FILL_ME_IN, str);
+            Assert.Equal("The quick brown fox jumped over the lazy dog.", str);
 
             //String.Format and StringBuilder will be more efficent that concatenation. Prefer them.
         }
 
-		[Koan(22)]
-		public void StringBuilderCanUseFormatAsWell()
-		{
-			var strBuilder = new System.Text.StringBuilder();
-			strBuilder.AppendFormat("{0} {1} {2}", "The", "quick", "brown");
-			strBuilder.AppendFormat("{0} {1} {2}", "jumped", "over", "the");
-			strBuilder.AppendFormat("{0} {1}.", "lazy", "dog");
-			var str = strBuilder.ToString();
-			Assert.Equal(FILL_ME_IN, str);
-		}
-		
+        [Koan(22)]
+        public void StringBuilderCanUseFormatAsWell()
+        {
+            var strBuilder = new System.Text.StringBuilder();
+            strBuilder.AppendFormat("{0} {1} {2}", "The", "quick", "brown");
+            strBuilder.AppendFormat("{0} {1} {2}", "jumped", "over", "the");
+            strBuilder.AppendFormat("{0} {1}.", "lazy", "dog");
+            var str = strBuilder.ToString();
+            Assert.Equal("The quick brownjumped over thelazy dog.", str);
+        }
+
         [Koan(23)]
         public void LiteralStringsInterpretsEscapeCharacters()
         {
             var str = "\n";
-            Assert.Equal(FILL_ME_IN, str.Length);
+            Assert.Equal(1, str.Length);
         }
 
         [Koan(24)]
         public void VerbatimStringsDoNotInterpretEscapeCharacters()
         {
             var str = @"\n";
-            Assert.Equal(FILL_ME_IN, str.Length);
+            Assert.Equal(2, str.Length);
         }
 
         [Koan(25)]
         public void VerbatimStringsStillDoNotInterpretEscapeCharacters()
         {
             var str = @"\\\";
-            Assert.Equal(FILL_ME_IN, str.Length);
+            Assert.Equal(3, str.Length);
         }
 
         [Koan(28)]
         public void YouCanGetASubstringFromAString()
         {
             var str = "Bacon, lettuce and tomato";
-            Assert.Equal(FILL_ME_IN, str.Substring(19));
-            Assert.Equal(FILL_ME_IN, str.Substring(7, 3));
+            Assert.Equal("tomato", str.Substring(19));
+            Assert.Equal("let", str.Substring(7, 3));
         }
 
         [Koan(29)]
         public void YouCanGetASingleCharacterFromAString()
         {
             var str = "Bacon, lettuce and tomato";
-            Assert.Equal(FILL_ME_IN, str[0]);
+            Assert.Equal('B', str[0]);
         }
 
         [Koan(30)]
@@ -275,7 +275,7 @@ broken line";
         {
             Assert.Equal(97, 'a');
             Assert.Equal(98, 'b');
-            Assert.Equal(FILL_ME_IN, 'b' == ('a' + 1));
+            Assert.Equal(true, 'b' == ('a' + 1));
         }
 
         [Koan(31)]
@@ -283,7 +283,7 @@ broken line";
         {
             var str = "Sausage Egg Cheese";
             string[] words = str.Split();
-            Assert.Equal(new[] { FILL_ME_IN }, words);
+            Assert.Equal(new[] {"Sausage", "Egg", "Cheese"}, words);
         }
 
         [Koan(32)]
@@ -291,7 +291,7 @@ broken line";
         {
             var str = "the:rain:in:spain";
             string[] words = str.Split(':');
-            Assert.Equal(new[] { FILL_ME_IN }, words);
+            Assert.Equal(new[] {"the", "rain", "in", "spain"}, words);
         }
 
         [Koan(33)]
@@ -300,7 +300,7 @@ broken line";
             var str = "the:rain:in:spain";
             var regex = new System.Text.RegularExpressions.Regex(":");
             string[] words = regex.Split(str);
-            Assert.Equal(new[] { FILL_ME_IN }, words);
+            Assert.Equal(new[] {"the", "rain", "in", "spain"}, words);
 
             //A full treatment of regular expressions is beyond the scope
             //of this tutorial. The book "Mastering Regular Expressions"

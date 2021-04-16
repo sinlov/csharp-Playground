@@ -25,13 +25,13 @@ namespace foundation
             //It also knows the type, so once the above is in place, this doesn't work:
             //name = 42;
         }
-        
+
         [Koan(2)]
         public void ImplicitArrayAssignmentWithSameTypes()
         {
             //Even though we don't specify types explicitly, the compiler
             //will pick one for us
-            var names = new[] { "John", "Smith" };
+            var names = new[] {"John", "Smith"};
             Assert.Equal(typeof(string[]), names.GetType());
 
             //but only if it can. So this doesn't work

@@ -20,20 +20,19 @@ namespace foundation
                 b = false;
             }
 
-            Assert.Equal(FILL_ME_IN, b);
+            Assert.Equal(true, b);
         }
 
         [Koan(2)]
         public void IfThenElseStatementsWithoutBrackets()
         {
             bool b;
-            if(true)
+            if (true)
                 b = true;
             else
                 b = false;
 
-            Assert.Equal(FILL_ME_IN, b);
-
+            Assert.Equal(true, b);
         }
 
         [Koan(3)]
@@ -45,7 +44,7 @@ namespace foundation
                 b = true;
             }
 
-            Assert.Equal(FILL_ME_IN, b);
+            Assert.Equal(true, b);
         }
 
         [Koan(4)]
@@ -55,7 +54,7 @@ namespace foundation
             if (true)
                 b = true;
 
-            Assert.Equal(FILL_ME_IN, b);
+            Assert.Equal(true, b);
         }
 
         [Koan(5)]
@@ -68,17 +67,17 @@ namespace foundation
 
             if (counter == 0)
                 b1 = true;
-                b2 = true;
+            b2 = true;
 
-			Assert.Equal(FILL_ME_IN, b1);
-			Assert.Equal(FILL_ME_IN, b2);
+            Assert.Equal(false, b1);
+            Assert.Equal(true, b2);
         }
 
         [Koan(6)]
         public void TernaryOperators()
         {
-            Assert.Equal(FILL_ME_IN, (true ? 1 : 0));
-            Assert.Equal(FILL_ME_IN, (false ? 1 : 0));
+            Assert.Equal(1, (true ? 1 : 0));
+            Assert.Equal(0, (false ? 1 : 0));
         }
 
         //This is out of place for control statements, but necessary for Koan 8
@@ -89,8 +88,8 @@ namespace foundation
             //i = null; //You can't do this
 
             int? nullableInt = null; //but you can do this
-			Assert.NotNull(FILL_ME_IN);
-			Assert.Null(FILL_ME_IN);
+            Assert.NotNull(i);
+            Assert.Null(nullableInt);
         }
 
         [Koan(8)]
@@ -100,7 +99,7 @@ namespace foundation
 
             int x = nullableInt ?? 42;
 
-            Assert.Equal(FILL_ME_IN, x);
+            Assert.Equal(42, x);
         }
 
         [Koan(9)]
@@ -121,10 +120,9 @@ namespace foundation
             if (myType is InfoMethods)
                 isInfoMethods = true;
 
-            Assert.Equal(FILL_ME_IN, isKoan);
-            Assert.Equal(FILL_ME_IN, isInfoControlStatements);
-            Assert.Equal(FILL_ME_IN, isInfoMethods);
-
+            Assert.Equal(true, isKoan);
+            Assert.Equal(true, isInfoControlStatements);
+            Assert.Equal(false, isInfoMethods);
         }
 
         [Koan(10)]
@@ -137,7 +135,8 @@ namespace foundation
                 result = result + i;
                 i += 1;
             }
-            Assert.Equal(FILL_ME_IN, result);
+
+            Assert.Equal(7, result);
         }
 
         [Koan(11)]
@@ -147,11 +146,16 @@ namespace foundation
             int result = 1;
             while (true)
             {
-                if (i > 3) { break; }
+                if (i > 3)
+                {
+                    break;
+                }
+
                 result = result + i;
-                i += 1;    
+                i += 1;
             }
-            Assert.Equal(FILL_ME_IN, result);
+
+            Assert.Equal(7, result);
         }
 
         [Koan(12)]
@@ -159,43 +163,50 @@ namespace foundation
         {
             int i = 0;
             var result = new List<int>();
-            while(i < 10)
+            while (i < 10)
             {
                 i += 1;
-                if ((i % 2) == 0) { continue; }
+                if ((i % 2) == 0)
+                {
+                    continue;
+                }
+
                 result.Add(i);
             }
-            Assert.Equal(FILL_ME_IN, result);
+
+            Assert.Equal(new List<int>(new int[] {1, 3, 5, 7, 9}), result);
         }
 
         [Koan(13)]
         public void ForStatement()
         {
-            var list = new List<string> { "fish", "and", "chips" };
+            var list = new List<string> {"fish", "and", "chips"};
             for (int i = 0; i < list.Count; i++)
             {
                 list[i] = (list[i].ToUpper());
             }
-            Assert.Equal(FILL_ME_IN, list);
+
+            Assert.Equal(new List<string> {"FISH", "AND", "CHIPS"}, list);
         }
 
         [Koan(14)]
         public void ForEachStatement()
         {
-            var list = new List<string> { "fish", "and", "chips" };
+            var list = new List<string> {"fish", "and", "chips"};
             var finalList = new List<string>();
             foreach (string item in list)
             {
                 finalList.Add(item.ToUpper());
             }
-            Assert.Equal(FILL_ME_IN, list);
-            Assert.Equal(FILL_ME_IN, finalList);
+
+            Assert.Equal(new List<string> {"fish", "and", "chips"}, list);
+            Assert.Equal(new List<string> {"FISH", "AND", "CHIPS"}, finalList);
         }
 
         [Koan(15)]
         public void ModifyingACollectionDuringForEach()
         {
-            var list = new List<string> { "fish", "and", "chips" };
+            var list = new List<string> {"fish", "and", "chips"};
             try
             {
                 foreach (string item in list)
@@ -205,7 +216,7 @@ namespace foundation
             }
             catch (Exception ex)
             {
-                Assert.Equal(typeof(FillMeIn), ex.GetType());
+                Assert.Equal(typeof(InvalidOperationException), ex.GetType());
             }
         }
 
@@ -214,7 +225,7 @@ namespace foundation
         {
             string whoCaughtTheException = "No one";
 
-            var list = new List<string> { "fish", "and", "chips" };
+            var list = new List<string> {"fish", "and", "chips"};
             try
             {
                 foreach (string item in list)
@@ -234,7 +245,7 @@ namespace foundation
                 whoCaughtTheException = "When we tried to move to the next item in the list";
             }
 
-            Assert.Equal(FILL_ME_IN, whoCaughtTheException);
+            Assert.Equal("When we tried to move to the next item in the list", whoCaughtTheException);
         }
     }
 }

@@ -5,6 +5,14 @@ using Xunit.Abstractions;
 
 namespace FastCodeZoo.BaseTests
 {
+    /// <summary>
+    /// must use as
+    ///
+    /// <code>
+    /// InitSelf(MethodBase.GetCurrentMethod());
+    /// </code>
+    /// 
+    /// </summary>
     public class BaseTests : DisposableTests
     {
         private readonly ITestOutputHelper _testOutputHelper;

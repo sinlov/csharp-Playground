@@ -4,6 +4,10 @@ namespace FastCodeZoo.DateTimeFormat
 {
     public static class DateFormatUtil
     {
+        /// <summary>
+        /// 获取时间戳 秒级
+        /// </summary>
+        /// <returns></returns>
         public static string GetTimeStampStrSecond()
         {
             TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);

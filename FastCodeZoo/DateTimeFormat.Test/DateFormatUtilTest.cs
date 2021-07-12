@@ -20,6 +20,20 @@ namespace FastCodeZoo.DateTimeFormat.Test
         }
 
         [Fact]
+        public void Test_TimeStamp()
+        {
+            Int64 timeStamp = DateFormatUtil.TimeStamp();
+            TLog($"timeStamp: {timeStamp}");
+            Assert.NotSame(0, timeStamp);
+            string unixTimeStampToString = DateFormatUtil.ConvertUnixTimeStampToString(timeStamp);
+            TLog($"unixTimeStampToString: {unixTimeStampToString}");
+            Assert.NotNull(unixTimeStampToString);
+            string timeStampToString = DateFormatUtil.ConvertUnixTimeStampToString(timeStamp, "yyyy-MM-dd HH:mm:ss");
+            TLog($"timeStampToString: {timeStampToString}");
+            Assert.NotNull(timeStampToString);
+        }
+
+        [Fact]
         public void Test_GetFormatUTCTime()
         {
             string formatUtcTime = DateFormatUtil.GetFormatUTCTime();

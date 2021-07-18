@@ -57,6 +57,8 @@
         <Compile Include="BuildHelper.cs" />
         <Compile Include="CodeStackTrace.cs" />
         <Compile Include="CodeStackTraceTest.cs" />
+        <Compile Include="DateTimeFormat.Test\DateFormatUtilTest.cs" />
+        <Compile Include="DateTimeFormat\DateFormatUtil.cs" />
         <Compile Include="FilePlus.Tests\FilePlusTest.cs" />
         <Compile Include="FilePlus\FilePlus.cs" />
         <Compile Include="Number.Tests\NumberConvertTest.cs" />

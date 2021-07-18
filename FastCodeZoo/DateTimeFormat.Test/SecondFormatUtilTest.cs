@@ -9,17 +9,23 @@ namespace FastCodeZoo.DateTimeFormat.Test
         [Fact]
         public void Test_FloatTimeFloor2String()
         {
-            TLog(SecondFormatUtil.FloatTimeFloor2String(3800f));
+            // TLog(SecondFormatUtil.FloatTimeFloor2String(3800f));
             Assert.Equal("0″", SecondFormatUtil.FloatTimeFloor2String(-2f));
             Assert.Equal("2″", SecondFormatUtil.FloatTimeFloor2String(2f));
             Assert.Equal("30″", SecondFormatUtil.FloatTimeFloor2String(30.1f));
+            TLog(SecondFormatUtil.FloatTimeFloor2String(3600f));
+            Assert.Equal("01′0″", SecondFormatUtil.FloatTimeFloor2String(60f));
+            Assert.Equal("01:00′0″", SecondFormatUtil.FloatTimeFloor2String(3600f));
             Assert.Equal("01:03′20″", SecondFormatUtil.FloatTimeFloor2String(3800f));
         }
 
         [Fact]
         public void Test_FloatTimeCeiling2String()
         {
-            Assert.Equal("0″", SecondFormatUtil.FloatTimeFloor2String(-2f));
+            // TLog(SecondFormatUtil.FloatTimeFloor2String(3800f));
+            Assert.Equal("0″", SecondFormatUtil.FloatTimeCeiling2String(-2f));
+            Assert.Equal("01′0″", SecondFormatUtil.FloatTimeCeiling2String(60f));
+            Assert.Equal("01:00′0″", SecondFormatUtil.FloatTimeCeiling2String(3600f));
             Assert.Equal("2″", SecondFormatUtil.FloatTimeCeiling2String(2f));
             Assert.Equal("31″", SecondFormatUtil.FloatTimeCeiling2String(30.1f));
             Assert.Equal("01:03′20″", SecondFormatUtil.FloatTimeCeiling2String(3800f));

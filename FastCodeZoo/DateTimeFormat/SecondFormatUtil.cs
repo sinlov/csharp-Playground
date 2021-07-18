@@ -16,6 +16,7 @@ namespace FastCodeZoo.DateTimeFormat
             {
                 return "0″";
             }
+
             float h = Mathf.FloorToInt(time / 3600f);
             float m = Mathf.FloorToInt(time / 60f - h * 60f);
             float s = Mathf.FloorToInt(time - m * 60f - h * 3600f);
@@ -28,6 +29,13 @@ namespace FastCodeZoo.DateTimeFormat
             if (m > 0)
             {
                 sb.Append(m.ToString("00")).Append("′");
+            }
+            else
+            {
+                if (h > 0)
+                {
+                    sb.Append("00′");
+                }
             }
 
             if (s > 9)
@@ -53,6 +61,7 @@ namespace FastCodeZoo.DateTimeFormat
             {
                 return "0″";
             }
+
             float h = Mathf.FloorToInt(Mathf.Ceiling2Int(time) / 3600f);
             float m = Mathf.FloorToInt(Mathf.Ceiling2Int(time) / 60f - h * 60f);
             float s = Mathf.FloorToInt(Mathf.Ceiling2Int(time) - m * 60f - h * 3600f);
@@ -65,6 +74,13 @@ namespace FastCodeZoo.DateTimeFormat
             if (m > 0)
             {
                 sb.Append(m.ToString("00")).Append("′");
+            }
+            else
+            {
+                if (h > 0)
+                {
+                    sb.Append("00′");
+                }
             }
 
             if (s > 9)

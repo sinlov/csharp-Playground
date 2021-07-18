@@ -58,10 +58,13 @@
         <Compile Include="CodeStackTrace.cs" />
         <Compile Include="CodeStackTraceTest.cs" />
         <Compile Include="DateTimeFormat.Test\DateFormatUtilTest.cs" />
+        <Compile Include="DateTimeFormat.Test\SecondFormatUtilTest.cs" />
         <Compile Include="DateTimeFormat\DateFormatUtil.cs" />
+        <Compile Include="DateTimeFormat\SecondFormatUtil.cs" />
         <Compile Include="FilePlus.Tests\FilePlusTest.cs" />
         <Compile Include="FilePlus\FilePlus.cs" />
         <Compile Include="Number.Tests\NumberConvertTest.cs" />
+        <Compile Include="Number\Mathf.cs" />
         <Compile Include="Number\NumberConvert.cs" />
         <Compile Include="Tests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

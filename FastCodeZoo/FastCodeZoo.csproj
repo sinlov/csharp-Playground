@@ -63,6 +63,8 @@
         <Compile Include="DateTimeFormat\SecondFormatUtil.cs" />
         <Compile Include="FilePlus.Tests\FilePlusTest.cs" />
         <Compile Include="FilePlus\FilePlus.cs" />
+        <Compile Include="HexCode.Tests\HexCodeUtilTest.cs" />
+        <Compile Include="HexCode\HexCodeUtil.cs" />
         <Compile Include="Number.Tests\NumberConvertTest.cs" />
         <Compile Include="Number\Mathf.cs" />
         <Compile Include="Number\NumberConvert.cs" />

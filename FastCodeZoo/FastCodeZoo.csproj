@@ -61,6 +61,12 @@
         <Compile Include="DateTimeFormat.Test\SecondFormatUtilTest.cs" />
         <Compile Include="DateTimeFormat\DateFormatUtil.cs" />
         <Compile Include="DateTimeFormat\SecondFormatUtil.cs" />
+        <Compile Include="EndianBitConverter.Test\GetBytesTests.cs" />
+        <Compile Include="EndianBitConverter.Test\InterfaceTests.cs" />
+        <Compile Include="EndianBitConverter\BigEndianBitConverter.cs" />
+        <Compile Include="EndianBitConverter\EndianBitConverter.cs" />
+        <Compile Include="EndianBitConverter\LittleEndianBitConverter.cs" />
+        <Compile Include="EndianBitConverter\SingleConverter.cs" />
         <Compile Include="FilePlus.Tests\FilePlusTest.cs" />
         <Compile Include="FilePlus\FilePlus.cs" />
         <Compile Include="HexCode.Tests\HexCodeUtilTest.cs" />

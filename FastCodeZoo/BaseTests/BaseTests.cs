@@ -28,6 +28,9 @@ namespace FastCodeZoo.BaseTests
         protected void TLogException(Exception ex)
         {
             _testOutputHelper.WriteLine($"UnitTest {_selfClassName}: {ex}");
+            Console.Out.WriteLine("build demo");
+            string version = "1.1.0";
+            Console.Out.WriteLine($"build demo version {version}");
         }
 
         protected string GetProgramRunnerDir()

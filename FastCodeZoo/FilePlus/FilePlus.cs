@@ -70,12 +70,23 @@ namespace FastCodeZoo.FilePlus
                 }
 
                 string tempPath = Path.Combine(destDirName, file.Name);
-                if (overwrite && File.Exists(tempPath))
+                // if (overwrite && File.Exists(tempPath))
+                // {
+                //     File.Delete(tempPath);
+                // }
+                if (overwrite)
                 {
-                    File.Delete(tempPath);
+                    file.CopyTo(tempPath, true);
                 }
+                else
+                {
+                    if (File.Exists(tempPath))
+                    {
+                        continue;
+                    }
 
-                file.CopyTo(tempPath, overwrite);
+                    file.CopyTo(tempPath, false);
+                }
             }
 
             DirectoryInfo[] dirs = dir.GetDirectories();

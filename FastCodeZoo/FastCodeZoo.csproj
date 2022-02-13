@@ -74,6 +74,8 @@
         <Compile Include="Number.Tests\NumberConvertTest.cs" />
         <Compile Include="Number\Mathf.cs" />
         <Compile Include="Number\NumberConvert.cs" />
+        <Compile Include="Strings.Tests\StringSplitTest.cs" />
+        <Compile Include="Strings\StringSplit.cs" />
         <Compile Include="Tests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="XML.Tests\AppleEntitlementsUtilsTests.cs" />

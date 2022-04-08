@@ -51,6 +51,12 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Algorithm.Test\ObjectIdTest.cs" />
+        <Compile Include="Algorithm\HashAlgorithmHelper.cs" />
+        <Compile Include="Algorithm\HashAlgorithmInstances.cs" />
+        <Compile Include="Algorithm\Md5Encipher.cs" />
+        <Compile Include="Algorithm\ObjectId.cs" />
+        <Compile Include="Algorithm\ObjectIdGenerator.cs" />
         <Compile Include="BaseTests\BaseTests.cs" />
         <Compile Include="BaseTests\DisposableTests.cs" />
         <Compile Include="BuildConfig.cs" />
@@ -71,6 +77,10 @@
         <Compile Include="FilePlus\FilePlus.cs" />
         <Compile Include="HexCode.Tests\HexCodeUtilTest.cs" />
         <Compile Include="HexCode\HexCodeUtil.cs" />
+        <Compile Include="LinQ.Test\LinqDemoTest.cs" />
+        <Compile Include="LinQPlus.Test\SearchPlusTest.cs" />
+        <Compile Include="LinQPlus\SearchItem.cs" />
+        <Compile Include="LinQPlus\SearchPlus.cs" />
         <Compile Include="Number.Tests\NumberConvertTest.cs" />
         <Compile Include="Number\Mathf.cs" />
         <Compile Include="Number\NumberConvert.cs" />

@@ -257,5 +257,41 @@ namespace FastCodeZoo.Structure.Tests
             });
             finalCheckTask.Wait();
         }
+
+
+        [Fact]
+        public void Test_other()
+        {
+            const int wantCapacity = 10;
+
+            CDictDemo demo = new CDictDemo(wantCapacity);
+            Assert.Equal(0, demo.Count);
+            Assert.Equal(wantCapacity, demo.Capacity);
+            Assert.Null(demo.FirstKey());
+            Assert.Null(demo.FirstValue());
+            Assert.Null(demo.FirstValue());
+            Assert.Null(demo.LastValue());
+            Assert.False(demo.TryGet("0", out _));
+
+            demo.Clean();
+            Assert.Equal(0, demo.Count);
+            Assert.Equal(wantCapacity, demo.Capacity);
+            Assert.Null(demo.FirstValue());
+            Assert.Null(demo.LastValue());
+
+            demo.SetRange(new Dictionary<string, string>());
+            Assert.Equal(0, demo.Count);
+            Assert.Equal(wantCapacity, demo.Capacity);
+            Assert.Null(demo.FirstValue());
+            Assert.Null(demo.LastValue());
+            Assert.Null(demo.CopyDic());
+
+
+            CapacityLinkedDictionary<string, string> cld = new CapacityLinkedDictionary<string, string>();
+            Assert.Null(cld.FirstKey());
+            Assert.Null(cld.FirstValue());
+            Assert.Null(cld.FirstValue());
+            Assert.Null(cld.LastValue());
+        }
     }
 }

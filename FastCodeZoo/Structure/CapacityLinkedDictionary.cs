@@ -331,12 +331,7 @@ namespace FastCodeZoo.Structure
                 }
 
                 TK firstKey = _linkedList.First.Value;
-                if (_dictionary.TryGetValue(firstKey, out TV value))
-                {
-                    return value;
-                }
-
-                return default;
+                return _dictionary.TryGetValue(firstKey, out TV value) ? value : default;
             }
             finally
             {
@@ -373,12 +368,7 @@ namespace FastCodeZoo.Structure
                 }
 
                 TK lastKey = _linkedList.Last.Value;
-                if (_dictionary.TryGetValue(lastKey, out TV value))
-                {
-                    return value;
-                }
-
-                return default;
+                return _dictionary.TryGetValue(lastKey, out TV value) ? value : default;
             }
             finally
             {

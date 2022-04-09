@@ -191,6 +191,11 @@ namespace FastCodeZoo.Structure
             {
                 _dictionary[key] = value;
 
+                if (_linkedList.Contains(key))
+                {
+                    return;
+                }
+
                 if (_linkedList.Count >= _capacity)
                 {
                     _dictionary.Remove(_linkedList.First.Value);
@@ -224,6 +229,11 @@ namespace FastCodeZoo.Structure
                 foreach (KeyValuePair<TK, TV> keyValuePair in items)
                 {
                     _dictionary[keyValuePair.Key] = keyValuePair.Value;
+                    if (_linkedList.Contains(keyValuePair.Key))
+                    {
+                        continue;
+                    }
+
                     if (_linkedList.Count >= _capacity)
                     {
                         _dictionary.Remove(_linkedList.First.Value);

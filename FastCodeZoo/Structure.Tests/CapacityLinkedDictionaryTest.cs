@@ -67,6 +67,11 @@ namespace FastCodeZoo.Structure.Tests
                 "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
             }, demo.LinkKeys.ToArray());
 
+            for (int i = 0; i < wantCapacity - 2; i++)
+            {
+                demo.Set("3", Faker.Name.Name());
+            }
+
             Assert.False(demo.Remove("11"));
             Assert.True(demo.Remove("3"));
             Assert.Equal(wantCapacity - 1, demo.Count);

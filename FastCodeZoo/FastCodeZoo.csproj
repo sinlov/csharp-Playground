@@ -59,6 +59,7 @@
         <Compile Include="Algorithm\ObjectIdGenerator.cs" />
         <Compile Include="BaseTests\BaseTests.cs" />
         <Compile Include="BaseTests\DisposableTests.cs" />
+        <Compile Include="BaseTests\RandomDataTools.cs" />
         <Compile Include="BuildConfig.cs" />
         <Compile Include="BuildHelper.cs" />
         <Compile Include="CodeStackTrace.cs" />
@@ -86,6 +87,11 @@
         <Compile Include="Number\NumberConvert.cs" />
         <Compile Include="Strings.Tests\StringSplitTest.cs" />
         <Compile Include="Strings\StringSplit.cs" />
+        <Compile Include="Structure.Tests\CapacityLinkedDictionaryTest.cs" />
+        <Compile Include="Structure.Tests\CDictDemo.cs" />
+        <Compile Include="Structure.Tests\ConcurrentQueueTest.cs" />
+        <Compile Include="Structure\CapacityLinkedDictionary.cs" />
+        <Compile Include="Structure\LruCache.cs" />
         <Compile Include="Tests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="XML.Tests\AppleEntitlementsUtilsTests.cs" />
@@ -104,6 +110,9 @@
       <Content Include="XML.Tests\default.xml" />
       <Content Include="XML.Tests\error.json" />
       <Content Include="XML.Tests\sign-with-apple.entitlements" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="FakerDotNet" Version="1.0.7" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

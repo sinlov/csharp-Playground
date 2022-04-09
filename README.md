@@ -24,6 +24,11 @@ or
 - Target framework `.NetFramework 4.8`
 - Language Version `C# 7.3`
 
+
+### FakerDotNet
+
+- [https://github.com/mrstebo/FakerDotNet](https://github.com/mrstebo/FakerDotNet)
+
 ### RunOn
 
 - OS macOS

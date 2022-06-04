@@ -6,6 +6,11 @@
 
 - runtime `6.12.0.162` `NuGet Version: 5.9.0.7134`
 
+```bash
+$ dotnet --version
+6.0.104
+```
+
 ### Xunit
 
 - Output Type `Console application`
@@ -35,7 +40,7 @@ or
 ```
 $ sw_vers
 ProductName:	macOS
-ProductVersion:	12.2.1
-BuildVersion:	21D62
+ProductVersion:	12.4
+BuildVersion:	21F79
 ```
 - IDE `JetBrains Rider`

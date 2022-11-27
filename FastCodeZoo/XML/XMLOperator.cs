@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-using Xunit.Sdk;
 
 namespace FastCodeZoo.XML
 {

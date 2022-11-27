@@ -1,125 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
     <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{722E47FC-E4EA-4CF3-B4D8-BD9E0B933ECF}</ProjectGuid>
-        <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+
         <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>FastCodeZoo</RootNamespace>
-        <AssemblyName>FastCodeZoo</AssemblyName>
-        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
+
+        <LangVersion>8</LangVersion>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
+
     <ItemGroup>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
-        <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-            <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
-        </Reference>
-        <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-            <HintPath>..\packages\xunit.assert.2.1.0\lib\dotnet\xunit.assert.dll</HintPath>
-        </Reference>
-        <Reference Include="xunit.core, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-            <HintPath>..\packages\xunit.extensibility.core.2.1.0\lib\dotnet\xunit.core.dll</HintPath>
-        </Reference>
-        <Reference Include="xunit.execution.desktop, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
-            <HintPath>..\packages\xunit.extensibility.execution.2.1.0\lib\net45\xunit.execution.desktop.dll</HintPath>
-        </Reference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="3.1.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
     </ItemGroup>
+
     <ItemGroup>
-        <Compile Include="Algorithm.Test\ObjectIdTest.cs" />
-        <Compile Include="Algorithm\HashAlgorithmHelper.cs" />
-        <Compile Include="Algorithm\HashAlgorithmInstances.cs" />
-        <Compile Include="Algorithm\Md5Encipher.cs" />
-        <Compile Include="Algorithm\ObjectId.cs" />
-        <Compile Include="Algorithm\ObjectIdGenerator.cs" />
-        <Compile Include="BaseTests\BaseTests.cs" />
-        <Compile Include="BaseTests\DisposableTests.cs" />
-        <Compile Include="BaseTests\RandomDataTools.cs" />
-        <Compile Include="BuildConfig.cs" />
-        <Compile Include="BuildHelper.cs" />
-        <Compile Include="CodeStackTrace.cs" />
-        <Compile Include="CodeStackTraceTest.cs" />
-        <Compile Include="DateTimeFormat.Test\DateFormatUtilTest.cs" />
-        <Compile Include="DateTimeFormat.Test\SecondFormatUtilTest.cs" />
-        <Compile Include="DateTimeFormat\DateFormatUtil.cs" />
-        <Compile Include="DateTimeFormat\SecondFormatUtil.cs" />
-        <Compile Include="EndianBitConverter.Test\GetBytesTests.cs" />
-        <Compile Include="EndianBitConverter.Test\InterfaceTests.cs" />
-        <Compile Include="EndianBitConverter\BigEndianBitConverter.cs" />
-        <Compile Include="EndianBitConverter\EndianBitConverter.cs" />
-        <Compile Include="EndianBitConverter\LittleEndianBitConverter.cs" />
-        <Compile Include="EndianBitConverter\SingleConverter.cs" />
-        <Compile Include="FilePlus.Tests\FilePlusTest.cs" />
-        <Compile Include="FilePlus\FilePlus.cs" />
-        <Compile Include="HexCode.Tests\HexCodeUtilTest.cs" />
-        <Compile Include="HexCode\HexCodeUtil.cs" />
-        <Compile Include="LinQ.Test\LinqDemoTest.cs" />
-        <Compile Include="LinQPlus.Test\SearchPlusTest.cs" />
-        <Compile Include="LinQPlus\SearchItem.cs" />
-        <Compile Include="LinQPlus\SearchPlus.cs" />
-        <Compile Include="Number.Tests\NumberConvertTest.cs" />
-        <Compile Include="Number\Mathf.cs" />
-        <Compile Include="Number\NumberConvert.cs" />
-        <Compile Include="Strings.Tests\StringSplitTest.cs" />
-        <Compile Include="Strings\StringSplit.cs" />
-        <Compile Include="Structure.Tests\CapacityLinkedDictionaryTest.cs" />
-        <Compile Include="Structure.Tests\CDictDemo.cs" />
-        <Compile Include="Structure.Tests\ConcurrentQueueTest.cs" />
-        <Compile Include="Structure\CapacityLinkedDictionary.cs" />
-        <Compile Include="Structure\LruCache.cs" />
-        <Compile Include="Tests.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="XML.Tests\AppleEntitlementsUtilsTests.cs" />
-        <Compile Include="XML.Tests\XmlOperatorTests.cs" />
-        <Compile Include="XML\AppleEntitlementsUtils.cs" />
-        <Compile Include="XML\XMLOperator.cs" />
+        <PackageReference Include="FakerDotNet" Version="1.0.7" />
     </ItemGroup>
-    <ItemGroup>
-      <Content Include="FilePlus.Tests\.gitignore" />
-      <Content Include="FilePlus.Tests\copy-test-source\.gitignore" />
-      <Content Include="FilePlus.Tests\copy-test-source\innerdir-2\data.json" />
-      <Content Include="FilePlus.Tests\copy-test-source\innerdir_1\some.md" />
-      <Content Include="FilePlus.Tests\copy-test-source\innerdir_1\some.md.meta" />
-      <Content Include="FilePlus.Tests\copy-test-source\NewFile1.txt" />
-      <Content Include="XML.Tests\default.entitlements" />
-      <Content Include="XML.Tests\default.xml" />
-      <Content Include="XML.Tests\error.json" />
-      <Content Include="XML.Tests\sign-with-apple.entitlements" />
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="FakerDotNet" Version="1.0.7" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    <Target Name="AfterBuild">
-    </Target>
-    -->
 </Project>

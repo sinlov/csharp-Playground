@@ -3,6 +3,7 @@ using Xunit;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 
@@ -174,14 +175,28 @@ broken line";
         public void SeperatorsCanBeAdded()
         {
             var str = string.Format("{0:n}", 123456);
-            Assert.Equal("123,456.000", str);
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Assert.Equal("123,456.000", str);
+            }
+            else
+            {
+                Assert.Equal("123,456.00", str);
+            }
         }
 
         [Koan(17)]
         public void CurrencyDesignatorsCanBeAdded()
         {
             var str = string.Format("{0:n}", 123456);
-            Assert.Equal("123,456.000", str);
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Assert.Equal("123,456.000", str);
+            }
+            else
+            {
+                Assert.Equal("123,456.00", str);
+            }
         }
 
         [Koan(18)]
@@ -203,14 +218,30 @@ broken line";
         public void BuiltInDateFormaters()
         {
             var str = string.Format("{0:t}", DateTime.Parse("12/16/2011 2:35:02 PM"));
-            Assert.Equal("2:35 PM", str);
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Assert.Equal("2:35 PM", str);
+            }
+            else
+            {
+                Assert.Equal("14:35", str);
+            }
         }
 
         [Koan(21)]
         public void CustomeDateFormaters()
         {
             var str = string.Format("{0:t m}", DateTime.Parse("12/16/2011 2:35:02 PM"));
-            Assert.Equal("P 35", str);
+            Console.Out.WriteLine("System.Globalization.CultureInfo.CurrentCulture.LCID = {0}",
+                System.Globalization.CultureInfo.CurrentCulture.LCID);
+            if (System.Globalization.CultureInfo.CurrentCulture.Name == "zh-CN")
+            {
+                Assert.Equal("下 35", str);
+            }
+            else
+            {
+                Assert.Equal("P 35", str);
+            }
         }
         //These are just a few of the formatters available. Dig some and you may find what you need.
 

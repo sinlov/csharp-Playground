@@ -4,15 +4,31 @@
 
 ## env
 
-- dotnet `7.0.100`
+- dotnet `6.0.101`
 - `NuGet Version: 6.3.1.1`
--
+- `mono version 6.12.0.182`
 
 ```bash
 $ dotnet --version
-7.0.100
+6.0.101
 $ nuget \?
 NuGet Version: 6.3.1.1
+
+# show dependencies
+$ dotnet list package
+
+# if build error, please check at nuget config at
+$ cat ~/.nuget/NuGet/NuGet.Config
+# powershell
+> cat "$Env:APPDATA\NuGet\NuGet.Config"
+```
+
+- xml
+
+```xml
+  <packageSources>
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
+  </packageSources>
 ```
 
 ### NUnit

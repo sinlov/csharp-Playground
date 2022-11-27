@@ -82,7 +82,7 @@ broken line";
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Assert.Equal("I\ram a\rbroken line", literalString);
+                Assert.Equal("I\r\nam a\r\nbroken line", literalString);
             }
             else
             {

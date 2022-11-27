@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace foundation
 {
@@ -75,8 +76,18 @@ broken line";
             //the hardcoded escape sequence. A much better way
             //(We'll handle concatenation and better ways of that in a bit)
             var literalString = "I" + System.Environment.NewLine + "am a" + System.Environment.NewLine + "broken line";
-            var vebatimString = "I\nam a\nbroken line";
-            Assert.Equal(literalString, vebatimString);
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Assert.Equal("I\nam a\nbroken line", literalString);
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Assert.Equal("I\ram a\rbroken line", literalString);
+            }
+            else
+            {
+                Assert.Equal("I\nam a\nbroken line", literalString);
+            }
         }
 
         [Koan(8)]
@@ -283,7 +294,7 @@ broken line";
         {
             var str = "Sausage Egg Cheese";
             string[] words = str.Split();
-            Assert.Equal(new[] {"Sausage", "Egg", "Cheese"}, words);
+            Assert.Equal(new[] { "Sausage", "Egg", "Cheese" }, words);
         }
 
         [Koan(32)]
@@ -291,7 +302,7 @@ broken line";
         {
             var str = "the:rain:in:spain";
             string[] words = str.Split(':');
-            Assert.Equal(new[] {"the", "rain", "in", "spain"}, words);
+            Assert.Equal(new[] { "the", "rain", "in", "spain" }, words);
         }
 
         [Koan(33)]
@@ -300,7 +311,7 @@ broken line";
             var str = "the:rain:in:spain";
             var regex = new System.Text.RegularExpressions.Regex(":");
             string[] words = regex.Split(str);
-            Assert.Equal(new[] {"the", "rain", "in", "spain"}, words);
+            Assert.Equal(new[] { "the", "rain", "in", "spain" }, words);
 
             //A full treatment of regular expressions is beyond the scope
             //of this tutorial. The book "Mastering Regular Expressions"

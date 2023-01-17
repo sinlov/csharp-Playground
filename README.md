@@ -4,9 +4,9 @@
 
 ## env
 
-- dotnet `6.0.101`
+- [dotnet 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) `7.0.102`
 - `NuGet Version: 6.3.1.1`
-- `mono version 6.12.0.182`
+- [mono download](https://www.mono-project.com/download/stable/) `mono version 6.12.0.182`
 
 ```bash
 $ dotnet --version

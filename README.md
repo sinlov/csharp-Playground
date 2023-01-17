@@ -10,9 +10,9 @@
 
 ```bash
 $ dotnet --version
-6.0.101
+7.0.102
 $ nuget \?
-NuGet Version: 6.3.1.1
+NuGet Version: 6.4.0.123
 
 # show dependencies
 $ dotnet list package
@@ -34,13 +34,13 @@ $ cat ~/.nuget/NuGet/NuGet.Config
 ### NUnit
 
 - Output Type `Class library`
-- Target framework `net6.0`
+- Target framework `net7.0`
 - Language Version `C# 8.0`
 - Nullable reference types(C# 8.0+) `Enable`
 
 ```xml
 <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>8</LangVersion>
 </PropertyGroup>
@@ -53,14 +53,14 @@ $ cat ~/.nuget/NuGet/NuGet.Config
 ### Xunit
 
 - Output Type `Console application`
-- Target framework `net6.0`
-- Language Version `C# latest minor`
+- Target framework `net7.0`
+- Language Version `C# 8.0`
 
 or
 
 - Output Type `Class library`
 - Target framework `.NetFramework 4.8`
-- Language Version `C# 7.3`
+- Language Version `C# 8.0`
 
 ### RunOn
 
@@ -69,8 +69,8 @@ or
 ```
 $ sw_vers
 ProductName:	macOS
-ProductVersion:	12.6.1
-BuildVersion:	21G217
+ProductVersion:	13.1
+BuildVersion:	22C65
 ```
 
 - IDE `JetBrains Rider`

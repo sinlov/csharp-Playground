@@ -20,6 +20,8 @@ namespace FastCodeZoo.BaseTests
         private string _selfClassName;
         private string _programRunnerDir;
 
+        public ITestOutputHelper TestOutputHelper => _testOutputHelper;
+
         protected void TLog(string message)
         {
             _testOutputHelper.WriteLine($"UnitTest {_selfClassName}: {message}");

@@ -42,5 +42,5 @@ jobs:
         run: dotnet test
         # run: dotnet test --no-restore --verbosity normal
 
-      - name: Build Debug
+      - name: Build Release
         run: dotnet build --configuration Release --no-restore

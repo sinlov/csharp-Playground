@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -21,7 +22,7 @@ namespace FastCodeZoo.Structure
         {
             _locker = new ReaderWriterLockSlim();
             _capacity = capacity > 0 ? capacity : DefaultCapacity;
-            _dictionary = new Dictionary<TK, TV>();
+            _dictionary = new ConcurrentDictionary<TK, TV>();
             _linkedList = new LinkedList<TK>();
         }
 

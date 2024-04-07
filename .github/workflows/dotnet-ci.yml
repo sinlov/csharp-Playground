@@ -27,7 +27,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet_version }}
           dotnet-quality: 'preview'
-          cache: true
+          # cache: true
 
       - name: Install dependencies
         run: dotnet restore

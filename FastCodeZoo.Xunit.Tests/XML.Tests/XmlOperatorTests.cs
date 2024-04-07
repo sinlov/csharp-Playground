@@ -10,6 +10,26 @@ namespace FastCodeZoo.XMK.Tests
 {
     public class XmlOperatorTests : BaseTests.BaseTests
     {
+        private const string _defaultXMLContant = @"<?xml version=""1.0"" encoding=""utf-8""?>
+<!DOCTYPE plist PUBLIC ""-//Apple//DTD PLIST 1.0//EN"" ""http://www.apple.com/DTDs/PropertyList-1.0.dtd""[]>
+<plist version=""1.0"">
+  <dict>
+    <key>aps-environment</key>
+    <string>development</string>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+    <key>com.apple.developer.applesignin</key>
+  </dict>
+</plist>
+";
+
         private string _defaultXML;
         private string _errorXML;
         private string _rootXPath;
@@ -27,6 +47,10 @@ namespace FastCodeZoo.XMK.Tests
             _injectElement = "key";
             _attributes = new List<string>();
             _attributes.Add("com.apple.developer.applesignin");
+            if (!File.Exists(_defaultXML))
+            {
+                File.WriteAllText(_defaultXML, _defaultXMLContant);
+            }
         }
 
         [Fact]
@@ -60,6 +84,7 @@ namespace FastCodeZoo.XMK.Tests
             {
                 TLog($"GetCurSourceFileAbsDir exist at: {GetCurSourceFileAbsDir}");
             }
+
             Exception withAttributes =
                 XmlOperator.InjectElementWithTexts(_defaultXML, _rootXPath, _targetXPath, _injectElement,
                     _attributes);

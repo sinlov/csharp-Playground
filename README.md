@@ -4,15 +4,16 @@
 
 ## env
 
-- [dotnet 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) `7.0.102`
-- `NuGet Version: 6.3.1.1`
+- target dot net version `8.0.203` 
+  - [dotnet 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
+- `NuGet Version: 6.8.0.131`
 - [mono download](https://www.mono-project.com/download/stable/) `mono version 6.12.0.182`
 
 ```bash
 $ dotnet --version
-7.0.102
+8.0.203
 $ nuget \?
-NuGet Version: 6.4.0.123
+NuGet Version: 6.8.0.131
 
 # show dependencies
 $ dotnet list package
@@ -34,7 +35,7 @@ $ cat ~/.nuget/NuGet/NuGet.Config
 ### NUnit
 
 - Output Type `Class library`
-- Target framework `net7.0`
+- Target framework `net8.0`
 - Language Version `C# 8.0`
 - Nullable reference types(C# 8.0+) `Enable`
 
@@ -53,7 +54,7 @@ $ cat ~/.nuget/NuGet/NuGet.Config
 ### Xunit
 
 - Output Type `Console application`
-- Target framework `net7.0`
+- Target framework `net8.0`
 - Language Version `C# 8.0`
 
 or
@@ -68,9 +69,9 @@ or
 
 ```
 $ sw_vers
-ProductName:	macOS
-ProductVersion:	13.1
-BuildVersion:	22C65
+ProductName:		macOS
+ProductVersion:		14.4.1
+BuildVersion:		23E224
 ```
 
 - IDE `JetBrains Rider`

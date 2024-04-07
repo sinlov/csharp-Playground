@@ -1,0 +1,39 @@
+name: dotnet-ci
+
+on:
+  workflow_call: # https://docs.github.com/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow
+
+permissions:
+  contents: write
+  discussions: write
+
+jobs:
+  dotnet-ci:
+    name: dotnet-ci
+    strategy:
+      matrix:
+        dotnet_version:
+          - '8.0.203'
+        os:
+          - macos-latest
+          - windows-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4 # https://github.com/actions/setup-dotnet
+        with:
+          dotnet-version: ${{ matrix.dotnet_version }}
+          dotnet-quality: 'preview'
+          cache: true
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Tests list
+        run: dotnet test --list-tests
+
+      - name: Build Debug
+        run: dotnet build --configuration Debug --no-restore

@@ -1,4 +1,6 @@
 
+[![ci](https://github.com/sinlov/csharp-Playground/actions/workflows/ci.yml/badge.svg)](https://github.com/sinlov/csharp-Playground/actions/workflows/ci.yml)
+
 [![GitHub license](https://img.shields.io/github/license/sinlov/csharp-Playground)](https://github.com/sinlov/csharp-Playground)
 [![GitHub latest SemVer tag)](https://img.shields.io/github/v/tag/sinlov/csharp-Playground)](https://github.com/sinlov/csharp-Playground/tags)
 [![GitHub release)](https://img.shields.io/github/v/release/sinlov/csharp-Playground)](https://github.com/sinlov/csharp-Playground/releases)

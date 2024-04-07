@@ -90,4 +90,13 @@ ProductVersion:		14.4.1
 BuildVersion:		23E224
 ```
 
+- OS windows
+
+```
+systeminfo
+OS 名称:          Microsoft Windows 11 专业版
+OS 版本:          10.0.22631 暂缺 Build 22631
+系统类型:         x64-based PC
+```
+
 - IDE `JetBrains Rider`

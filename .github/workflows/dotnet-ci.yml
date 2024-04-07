@@ -32,12 +32,15 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
 
+      - name: Build Debug
+        run: dotnet build --configuration Debug
+      
       - name: Tests list
         run: dotnet test --list-tests
       
       - name: Tests all
-        run: dotnet test --no-restore
+        run: dotnet test
         # run: dotnet test --no-restore --verbosity normal
 
       - name: Build Debug
-        run: dotnet build --configuration Debug --no-restore
+        run: dotnet build --configuration Release --no-restore

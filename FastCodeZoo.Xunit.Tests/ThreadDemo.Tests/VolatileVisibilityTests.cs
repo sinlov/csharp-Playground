@@ -13,7 +13,15 @@ namespace FastCodeZoo.Xunit.Tests.ThreadDemo.Tests
 
         private void Log(string msg)
         {
-            _outLog.WriteLine(msg);
+            // no currently active test exception in XUnit C#
+            try
+            {
+                _outLog.WriteLine(msg);
+            }
+            catch
+            {
+                // ignore
+            }
         }
 
         public VolatileVisibility(ITestOutputHelper testOutputHelper)

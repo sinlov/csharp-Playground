@@ -220,6 +220,7 @@ broken line";
             var str = string.Format("{0:t}", DateTime.Parse("12/16/2011 2:35:02 PM"));
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
+                // more info: https://en.wikipedia.org/wiki/Non-breaking_space
                 Assert.Equal("2:35 PM", str.Replace(" ", " "));
             }
             else

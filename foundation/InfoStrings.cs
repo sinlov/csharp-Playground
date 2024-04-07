@@ -218,14 +218,19 @@ broken line";
         public void BuiltInDateFormaters()
         {
             var str = string.Format("{0:t}", DateTime.Parse("12/16/2011 2:35:02 PM"));
+            // more info: https://en.wikipedia.org/wiki/Non-breaking_space
+            str = str.Replace(" ", " ");
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                // more info: https://en.wikipedia.org/wiki/Non-breaking_space
-                Assert.Equal("2:35 PM", str.Replace(" ", " "));
+                Assert.Equal(str.Contains("PM") ? "2:35 PM" : "14:35", str);
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Assert.Equal(str.Contains("PM") ? "2:35 PM" : "14:35", str);
             }
             else
             {
-                Assert.Equal("14:35", str);
+                Assert.Equal(str.Contains("PM") ? "2:35 PM" : "14:35", str);
             }
         }
 

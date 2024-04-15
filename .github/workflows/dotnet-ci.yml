@@ -34,10 +34,10 @@ jobs:
 
       - name: Build Debug
         run: dotnet build --configuration Debug
-      
+
       - name: Tests list
         run: dotnet test --list-tests
-      
+
       - name: Tests all
         run: dotnet test
         # run: dotnet test --no-restore --verbosity normal

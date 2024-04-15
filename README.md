@@ -102,3 +102,29 @@ OS 版本:          10.0.22631 暂缺 Build 22631
 ```
 
 - IDE `JetBrains Rider`
+
+## dev
+
+### CleanArchitecture
+
+- [https://github.com/ardalis/CleanArchitecture](https://github.com/ardalis/CleanArchitecture)
+
+```bash
+$ dotnet new clean-arch -o CleanTestsArchitecture --dry-run
+```
+
+## test coverage
+
+### ReportGenerator
+
+```bash
+dotnet tool install -g dotnet-reportgenerator-globaltool
+```
+
+### dotnet-coverage
+
+- [https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-coverage](https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-coverage)
+
+```bash
+dotnet tool install --global dotnet-coverage
+```

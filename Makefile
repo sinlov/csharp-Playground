@@ -1,4 +1,3 @@
-.PHONY: test check clean build dist all
 # Makefile root
 # can change this by env:ENV_CI_DIST_VERSION use and change by env:ENV_CI_DIST_MARK by CI
 ENV_DIST_VERSION=latest
@@ -11,8 +10,10 @@ ENV_RUN_INFO_HELP_ARGS=-h
 ENV_RUN_INFO_ARGS=
 ## run info end
 
+.PHONY: all
 all: env
 
+.PHONY: env
 env:
 	@echo "== project env info start =="
 	@echo ""
@@ -23,45 +24,58 @@ env:
 	@echo "dotnet version"
 	@dotnet --version
 
-cleanBuild:
+.PHONY: clean.build
+clean.build:
 	 dotnet clean
 	 dotnet clean --configuration Release
 
-cleanTest:
+.PHONY: clean.test
+clean.test:
 	@$(RM) coverage.xml
 	@$(RM) build/report
 
-clean: cleanTest cleanBuild
+.PHONY: clean
+clean: clean.test clean.build
 	@echo "~> clean finish"
 
-cleanAll: clean
+.PHONY: clean.all
+clean.all: clean
 	@echo "~> clean all finish"
 
+.PHONY: init
 init: dep
 	@echo "~> start init this project"
 	@echo "-> check version"
 	@echo "dotnet version"
 	@dotnet --version
 
+.PHONY: dep
 dep:
 	dotnet restore
 
-testList:
+.PHONY: test.list
+test.list:
 	dotnet test --list-tests
 
-testDotnet:
+.PHONY: test.dotnet
+test.dotnet:
 	dotnet test
 
-test: testDotnet
+.PHONY: test
+test: test.dotnet
 
-buildDebug:
+.PHONY: build.debug
+build.debug:
 	dotnet build --configuration Debug --no-restore
 
-buildRelease:
+.PHONY: build.release
+build.release:
 	dotnet build --configuration Release --no-restore
 
-ci: test buildDebug
+.PHONY: ci
+ci: test build.debug
 
+.PHONY: helpProjectRoot
 helpProjectRoot:
 	@echo "Help: Project root Makefile"
 ifeq ($(OS),Windows_NT)
@@ -82,20 +96,15 @@ endif
 	@echo ""
 	@echo "~> make env                 - print env of this project"
 	@echo "~> make init                - check base env of this project"
-	@echo "~> make dep                 - check and install by go mod"
+	@echo ""
+	@echo "~> make dep                 - check and install dependencies"
+	@echo "~> make clean.test          - clean test data"
 	@echo "~> make clean               - remove build binary file, log files, and testdata"
 	@echo "~> make test                - run test case"
+	@echo ""
 	@echo "~> make ci                  - run CI tools tasks"
 
+.PHONY: help
 help: helpProjectRoot
-ifeq ($(OS),Windows_NT)
 	@echo ""
-	@echo "windows use this kit must install"
-	@echo "https://scoop.sh/#/apps?q=gow&s=0&d=1&o=true"
-	@echo "scoop install gow"
-	@echo "and"
-	@echo "https://scoop.sh/#/apps?q=busybox&s=0&d=1&o=true"
-	@echo "# scoop install shasum"
-endif
-	@echo ""
-	@echo "-- more info see Makefile include: MakeGoMod.mk MakeGoTest.mk MakeGoTestIntegration.mk --"
+	@echo "-- more info see Makefile and include --"
